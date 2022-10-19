@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'building docker image'
                 
-                sh('docker build -t valipivenkatesh/venkatesh_jenkins_image')
+                sh('docker build -t valipivenkatesh/venkatesh_jenkins_image .')
             }
         }
         
