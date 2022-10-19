@@ -39,7 +39,7 @@ pipeline {
         
         stage('start a container') {
             steps {
-                sh '''if [ $(docker ps | grep venkatesh-jenkins-container) = \'venkatesh-jenkins-container\' ]; then
+                sh '''if [ $(docker ps | awk \'{print $NF}\' | grep venkatesh-jenkins-container) = \'venkatesh-jenkins-container\' ]; then
                         docker stop "venkatesh-jenkins-container"
                         docker rm "venkatesh-jenkins-container"
                       fi'''
