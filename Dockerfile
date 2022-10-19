@@ -14,6 +14,6 @@ CMD ["bash"]
 
 COPY README.md .
 
-RUN README.md > "Persistent"
+RUN cat README.md > "Persistent"
 
 EXPOSE 8084
