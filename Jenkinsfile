@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'building docker image'
                 
-                sh('docker build -t valipivenkatesh/venkatesh_jenkins_image .')
+                sh('docker build -t valipivenkatesh/venkatesh-jenkins-demo-image .')
             }
         }
         
@@ -16,7 +16,7 @@ pipeline {
                 
                 sh('docker login -u valipivenkatesh -p Valipi8515@')
                 
-                sh('docker push valipivenkatesh/venkatesh_jenkins_image')
+                sh('docker push valipivenkatesh/venkatesh-jenkins-demo-image')
                 
                 echo 'pushed image to docker hub'
             }
@@ -26,7 +26,7 @@ pipeline {
         stage('pull image from Dockerhub') {
             steps {
                 
-                sh('docker pull valipivenkatesh/venkatesh_jenkins_image')
+                sh('docker pull valipivenkatesh/venkatesh-jenkins-demo-image')
                 
                 echo 'pulled image from Dockerhub'
                 
@@ -40,7 +40,7 @@ pipeline {
         stage('start a container') {
             steps {
                
-                sh('docker run -it -d -p 8084:80 --name venkatesh-jenkins-demo-container valipivenkatesh/venkatesh_jenkins_image')
+                sh('docker run -it -d -p 8084:80 --name venkatesh-jenkins-demo-container valipivenkatesh/venkatesh-jenkins-demo-image')
                 
                 sh('docker exec venkatesh-jenkins-demo-container service nginx start')
                 
