@@ -16,4 +16,4 @@ COPY README.md .
 
 RUN cat README.md > "Persistent"
 
-EXPOSE 8088
+EXPOSE 8086
