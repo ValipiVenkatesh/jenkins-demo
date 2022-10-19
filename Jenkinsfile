@@ -39,6 +39,10 @@ pipeline {
         
         stage('start a container') {
             steps {
+                sh '''if [ $(docker ps | grep venkatesh-jenkins-container) = \'venkatesh-jenkins-container\' ]; then
+                        docker stop "venkatesh-jenkins-container"
+                        docker rm "venkatesh-jenkins-container"
+                      fi'''
                
                 sh('docker run -it -d -p 8084:80 --name venkatesh-jenkins-container123 valipivenkatesh/venkatesh-jenkins-demo-image')
                 
