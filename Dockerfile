@@ -14,6 +14,6 @@ CMD ["bash"]
 
 COPY README.md .
 
-RUN cat index.html > "Persistent"
+RUN README.md > "Persistent"
 
 EXPOSE 8084
