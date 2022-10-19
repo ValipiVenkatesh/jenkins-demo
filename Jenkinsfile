@@ -14,7 +14,7 @@ pipeline {
         stage('Publish to Dockerhub') {
             steps {             
                 
-                sh('docker login -u valipivenkatesh -p Valipi8515')
+                sh('docker login -u valipivenkatesh -p Valipi8515@')
                 
                 sh('docker push valipivenkatesh/venkatesh_jenkins_image')
                 
@@ -28,7 +28,7 @@ pipeline {
                 
                 sh('docker pull valipivenkatesh/venkatesh_jenkins_image')
                 
-                echo 'pulled image from Dockerhub valipivenkatesh/venkatesh_jenkins_image'
+                echo 'pulled image from Dockerhub'
                 
                 sh('docker images')
                 
