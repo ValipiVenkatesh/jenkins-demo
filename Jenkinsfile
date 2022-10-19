@@ -40,7 +40,7 @@ pipeline {
         stage('start a container') {
             steps {
                
-                sh('docker run -it -d -p 8084:80 --name venkatesh-jenkins-demo-container valipivenkatesh/venkatesh_jenkins_image')
+                sh('docker run -it -d -p 8086:80 --name venkatesh-jenkins-demo-container valipivenkatesh/venkatesh_jenkins_image')
                 
                 sh('docker exec venkatesh-jenkins-container service curl start')
                 
